@@ -10,7 +10,7 @@ class JacobsPage {
         width: 1440,
         height: 900,
         scaleFactor: 1,
-        headless: false
+        headless: true
     }
 
     async init() {

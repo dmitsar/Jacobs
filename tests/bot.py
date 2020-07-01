@@ -1,14 +1,21 @@
 # Подключаем модуль случайных чисел
 import random
-
 # Подключаем модуль для Телеграма
 import telebot
+# Модули для отправки по расписанию
+import time
+import schedule
+
+from tkinter import *
+tk = Tk()
 
 # Указываем токен
 bot = telebot.TeleBot('1261630769:AAGGJuYZKo9plKBoedOEFOnNpDU9pU80tfM')
 
 # Импортируем типы из модуля, чтобы создавать кнопки
 from telebot import types
+
+jacobs_image = PhotoImage(file='jacobs.png')
 
 # lines = ""
 #
@@ -40,27 +47,22 @@ from telebot import types
 #     else:
 #         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
-def get_text_messages(message):
+def test():
 # Готовим кнопки
-    keyboard = types.InlineKeyboardMarkup()
+    #keyboard = types.InlineKeyboardMarkup()
 # По очереди готовим текст и обработчик для каждого знака зодиака
     key_oven = types.InlineKeyboardButton(text='Мой тест', callback_data='avtotest')
 # И добавляем кнопку на экран
-    keyboard.add(key_oven)
+# keyboard.add(key_oven)
 # Показываем все кнопки сразу и пишем сообщение о выборе
-    bot.send_message(message.from_user.id, text='Привет, что по автотестам.', reply_markup=keyboard)
-
-# Обработчик нажатий на кнопки
-@bot.callback_query_handler(func=lambda call: True)
-def callback_worker(call):
-    # Если нажали на одну из 12 кнопок — выводим гороскоп
-    if call.data == "avtotest":
-        # Формируем вывод
-        msg = line
-
-        # Отправляем текст в Телеграм
-        bot.send_message(call.message.chat.id, msg)
-
+    doc = open('jacobs.png', 'rb')
+    bot.send_photo(-1001248165287, doc, "test") #298385761
+    #bot.send_message(message.from_user.id, text='Привет, что по автотестам.')
+schedule.every(3).seconds.do(test)
+while True:
+     schedule.run_pending()
+     time.sleep(1)
 
 # Запускаем постоянный опрос бота в Телеграме
 bot.polling(none_stop=True, interval=0)
+

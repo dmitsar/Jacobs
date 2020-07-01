@@ -4,7 +4,7 @@ const { expect } = require('chai').use(require('chai-as-promised'))
 
 describe('Якобс', function () {
     let Page
-    this.timeout(20000);
+    this.timeout(30000);
 
     before(async () => {
         Page = new JacobsPage()
