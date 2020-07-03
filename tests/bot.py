@@ -8,6 +8,7 @@ import schedule
 
 bot = telebot.TeleBot('1261630769:AAGGJuYZKo9plKBoedOEFOnNpDU9pU80tfM')
 
+<<<<<<< HEAD
 # Импортируем типы из модуля, чтобы создавать кнопки
 #from telebot import types
 
@@ -16,6 +17,10 @@ bot = telebot.TeleBot('1261630769:AAGGJuYZKo9plKBoedOEFOnNpDU9pU80tfM')
 from telebot import types
 #jacobs_image = PhotoImage(file='jacobs.png')
 
+=======
+from telebot import types
+#jacobs_image = PhotoImage(file='jacobs.png')
+>>>>>>> refs/remotes/origin/master
 # lines = ""
 #
 # with open('test.txt', 'r', encoding='utf-8') as file:
@@ -27,6 +32,7 @@ from telebot import types
 def photoMessage():
 # Готовим кнопки
     #keyboard = types.InlineKeyboardMarkup()
+<<<<<<< HEAD
 
 # По очереди готовим текст и обработчик для каждого знака зодиака
     #key_oven = types.InlineKeyboardButton(text='Мой тест', callback_data='avtotest')
@@ -34,6 +40,10 @@ def photoMessage():
     #key_oven = types.InlineKeyboardButton(text='Мой тест', callback_data='avtotest')
 # кнопку на экран
 
+=======
+    #key_oven = types.InlineKeyboardButton(text='Мой тест', callback_data='avtotest')
+# кнопку на экран
+>>>>>>> refs/remotes/origin/master
 # keyboard.add(key_oven)
     doc = open('jacobs.png', 'rb')
     bot.send_photo(-1001248165287, doc, "screen") #298385761
