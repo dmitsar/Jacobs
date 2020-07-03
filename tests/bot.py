@@ -6,16 +6,16 @@ import telebot
 import time
 import schedule
 
-from tkinter import *
-tk = Tk()
+#from tkinter import *
+#tk = Tk()
 
 # Указываем токен
 bot = telebot.TeleBot('1261630769:AAGGJuYZKo9plKBoedOEFOnNpDU9pU80tfM')
 
 # Импортируем типы из модуля, чтобы создавать кнопки
-from telebot import types
+#from telebot import types
 
-jacobs_image = PhotoImage(file='jacobs.png')
+#jacobs_image = PhotoImage(file='jacobs.png')
 
 # lines = ""
 #
@@ -51,7 +51,7 @@ def test():
 # Готовим кнопки
     #keyboard = types.InlineKeyboardMarkup()
 # По очереди готовим текст и обработчик для каждого знака зодиака
-    key_oven = types.InlineKeyboardButton(text='Мой тест', callback_data='avtotest')
+    #key_oven = types.InlineKeyboardButton(text='Мой тест', callback_data='avtotest')
 # И добавляем кнопку на экран
 # keyboard.add(key_oven)
 # Показываем все кнопки сразу и пишем сообщение о выборе
